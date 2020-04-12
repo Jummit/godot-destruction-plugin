@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="%sShard%s" type="RigidBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
