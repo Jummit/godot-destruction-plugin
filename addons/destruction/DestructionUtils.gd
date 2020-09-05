@@ -26,16 +26,6 @@ static func create_shards_from(object_path : String, shard_template : String = "
 	return create_shards(load(object_path).instance(), load(shard_template))
 
 
-static func get_middle(points : PoolVector3Array) -> Vector3:
-	if points.size() == 0:
-		return Vector3()
-	
-	var sum := Vector3()
-	for point in points:
-		sum += point
-	return sum / points.size()
-
-
 static func reposition_mesh_to_middle(mesh_instance : MeshInstance):
 	var mesh := mesh_instance.mesh
 	if mesh.get_faces().size() == 0:
@@ -51,3 +41,13 @@ static func reposition_mesh_to_middle(mesh_instance : MeshInstance):
 # warning-ignore:return_value_discarded
 		mesh_tool.commit_to_surface(mesh_instance.mesh)
 	mesh_instance.translate(middle)
+
+
+static func get_middle(points : PoolVector3Array) -> Vector3:
+	if points.size() == 0:
+		return Vector3()
+	
+	var sum := Vector3()
+	for point in points:
+		sum += point
+	return sum / points.size()
