@@ -1,6 +1,6 @@
 [gd_scene format=2]
 
-[node name="%sShard%s" type="RigidBody"]
+[node name="{name}Shard{number}" type="RigidBody"]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 

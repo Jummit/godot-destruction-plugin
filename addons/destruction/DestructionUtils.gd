@@ -1,6 +1,6 @@
 static func create_shards(object : Spatial, shard_template : PackedScene = preload("res://addons/destruction/ShardTemplates/DefaultShardTemplate.tscn")) -> Spatial:
 	var shards := Spatial.new()
-	shards.name = "%sShards" % object.name
+	shards.name = object.name + "Shards"
 	var shard_num := 0
 	for shard_mesh in object.get_children():
 		if not shard_mesh is MeshInstance:
@@ -8,7 +8,8 @@ static func create_shards(object : Spatial, shard_template : PackedScene = prelo
 		reposition_mesh_to_middle(shard_mesh)
 		var new_shard : RigidBody = shard_template.instance()
 		new_shard.translation = shard_mesh.translation
-		new_shard.name %= [object.name, shard_num]
+		new_shard.name = new_shard.name.format(
+				{name = object.name, number = shard_num})
 		
 		var mesh_instance : MeshInstance = new_shard.get_node("MeshInstance")
 		mesh_instance.mesh = shard_mesh.mesh
