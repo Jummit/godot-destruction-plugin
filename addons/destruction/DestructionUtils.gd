@@ -22,10 +22,6 @@ static func create_shards(object : Spatial, shard_template : PackedScene = prelo
 	return shards
 
 
-static func create_shards_from(object_path : String, shard_template : String = "res://addons/destruction/ShardTemplates/DefaultShardTemplate.tscn") -> Spatial:
-	return create_shards(load(object_path).instance(), load(shard_template))
-
-
 static func reposition_mesh_to_middle(mesh_instance : MeshInstance):
 	var mesh := mesh_instance.mesh
 	if mesh.get_faces().size() == 0:
