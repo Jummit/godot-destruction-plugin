@@ -42,10 +42,11 @@ static func reposition_mesh_to_middle(mesh_instance : MeshInstance):
 	var middle := get_middle(mesh.create_convex_shape().points)
 	var mesh_tool := MeshDataTool.new()
 # warning-ignore:return_value_discarded
-	mesh_tool.create_from_surface(mesh, 0)
-	for i in range(mesh_tool.get_vertex_count()):
-		mesh_tool.set_vertex(i, mesh_tool.get_vertex(i) - middle)
 	mesh_instance.mesh = Mesh.new()
+	for surface in mesh.get_surface_count():
+		mesh_tool.create_from_surface(mesh, surface)
+		for i in range(mesh_tool.get_vertex_count()):
+			mesh_tool.set_vertex(i, mesh_tool.get_vertex(i) - middle)
 # warning-ignore:return_value_discarded
-	mesh_tool.commit_to_surface(mesh_instance.mesh)
+		mesh_tool.commit_to_surface(mesh_instance.mesh)
 	mesh_instance.translate(middle)
