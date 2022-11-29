@@ -16,8 +16,10 @@ const DestructionUtils = preload("res://addons/destruction/DestructionUtils.gd")
 
 var shards : Node3D
 
-func destroy() -> void:
+func _ready():
 	shards = DestructionUtils.create_shards(shard_scene.instantiate(), shard_template)
+
+func destroy() -> void:
 	get_node(shard_container).add_child(shards)
 	shards.global_transform.origin = get_parent().global_transform.origin
 	get_parent().queue_free()
