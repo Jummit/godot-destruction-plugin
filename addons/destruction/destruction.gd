@@ -40,6 +40,15 @@ func _get_configuration_warning() -> String:
 static func _has_parent_of_type(node : Node, type) -> bool:
 	if not node.get_parent():
 		return false
-	if node.get_parent() is type:
+	if typeof(node.get_parent()) == type:
 		return true
 	return _has_parent_of_type(node.get_parent(), type)
+
+
+
+#static func _has_parent_of_type(node : Node, type) -> bool:
+#	if not node.get_parent():
+#		return false
+#	if node.get_parent() is type:
+#		return true
+#	return _has_parent_of_type(node.get_parent(), type)
