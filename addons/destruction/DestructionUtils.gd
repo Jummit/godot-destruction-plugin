@@ -19,6 +19,7 @@ static func create_shards(object : Node3D, shard_template : PackedScene = preloa
 		
 		shards.add_child(new_shard)
 		shard_num += 1
+	object.queue_free() #Another instance which needs to be queued free or it will end up as an orphan node.
 	return shards
 
 
