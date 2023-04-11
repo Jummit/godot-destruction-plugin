@@ -12,6 +12,7 @@ static func create_shards(object : Node3D, shard_template : PackedScene = preloa
 		
 		var mesh_instance : MeshInstance3D = new_shard.get_node("MeshInstance")
 		mesh_instance.mesh = shard_mesh.mesh
+		shard_mesh.queue_free()
 		
 		var collision_shape : CollisionShape3D = new_shard.get_node("CollisionShape")
 		collision_shape.shape = mesh_instance.mesh.create_convex_shape()
