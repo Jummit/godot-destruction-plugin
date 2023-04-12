@@ -13,13 +13,16 @@ extends Node
 @export var shard_container : NodePath = "../../": set = set_shard_container
 @export var collision_layers : Array[int]
 @export var layer_masks : Array[int]
+@export var explosion_power := 10
+@export var fade_delay := 4
+@export var shrink_delay := 4
 
 const DestructionUtils = preload("res://addons/destruction/DestructionUtils.gd")
 
 var shards : Node3D
 
 func destroy() -> void:
-	shards = DestructionUtils.create_shards(shard_scene.instantiate(), shard_template, collision_layers, layer_masks)
+	shards = DestructionUtils.create_shards(shard_scene.instantiate(), shard_template, collision_layers, layer_masks, explosion_power, fade_delay, shrink_delay)
 	get_node(shard_container).add_child(shards)
 	shards.global_transform.origin = get_parent().global_transform.origin
 	shards.top_level = true

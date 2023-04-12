@@ -1,4 +1,5 @@
-static func create_shards(object : Node3D, shard_template : PackedScene = preload("res://addons/destruction/ShardTemplates/DefaultShardTemplate.tscn"), collision_layers = [1], layer_masks = [1]) -> Node3D:
+static func create_shards(object : Node3D, shard_template : PackedScene = preload("res://addons/destruction/ShardTemplates/DefaultShardTemplate.tscn"), 
+collision_layers = [1], layer_masks = [1], explosion_power = 10, fade_delay = 4, shrink_delay = 4) -> Node3D:
 	var shards := Node3D.new()
 	shards.name = str(object.name) + "Shards"
 	var shard_num := 0
@@ -26,6 +27,14 @@ static func create_shards(object : Node3D, shard_template : PackedScene = preloa
         for layer_mask in layer_masks:
             layer_masks_decimal += 2**(layer_mask -1)
         new_shard.collision_mask = layer_masks_decimal
+        
+        var variables = {"explosion_power": explosion_power, 
+        "fade_delay": fade_delay,
+        "shrink_delay": shrink_delay
+        }
+        
+        for variable in variables:
+            new_shard.set(variable, variables[variable])
 		
 		shards.add_child(new_shard)
 		shard_num += 1
