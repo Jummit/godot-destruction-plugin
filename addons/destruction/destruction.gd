@@ -11,15 +11,18 @@ extends Node
 @export var shard_template : PackedScene = preload("res://addons/destruction/ShardTemplates/DefaultShardTemplate.tscn")
 @export var shard_scene : PackedScene
 @export var shard_container : NodePath = "../../": set = set_shard_container
+@export var collision_layers : Array[int]
+@export var layer_masks : Array[int]
 
 const DestructionUtils = preload("res://addons/destruction/DestructionUtils.gd")
 
 var shards : Node3D
 
 func destroy() -> void:
-	shards = DestructionUtils.create_shards(shard_scene.instantiate(), shard_template)
+	shards = DestructionUtils.create_shards(shard_scene.instantiate(), shard_template, collision_layers, layer_masks)
 	get_node(shard_container).add_child(shards)
 	shards.global_transform.origin = get_parent().global_transform.origin
+	shards.top_level = true
 	get_parent().queue_free()
 
 func set_shard_container(to : NodePath) -> void:
