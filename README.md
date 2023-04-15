@@ -2,6 +2,8 @@
 
 Addon for creating a destruction effect for meshes based on a segmented version.
 
+https://user-images.githubusercontent.com/28286961/232236134-19868773-dd9f-402a-b21e-c8ecc36beb81.mp4
+
 ## Usage
 
 1. Install the **Cell Fracture** addon in Blender, **join your mesh** and use **F3** to search for Cell Fracture. Set the Source Limit to how many RigidBodies you want in your game. (\~5 – 20)
