@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgin7e7ccao53"]
+
+[ext_resource type="Script" path="res://addons/destruction/shard.gd" id="1_c05n7"]
+
+[node name="Shard" type="RigidBody3D"]
+script = ExtResource("1_c05n7")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]

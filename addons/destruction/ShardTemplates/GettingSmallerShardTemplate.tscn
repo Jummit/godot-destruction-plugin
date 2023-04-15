@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv2i6bekh7n7f"]
-
-[ext_resource type="PackedScene" uid="uid://psf0oc5qnboi" path="res://addons/destruction/ShardTemplates/DefaultShardTemplate.tscn" id="1"]
-[ext_resource type="Script" path="res://addons/destruction/ShardTemplates/GettingSmallerShardTemplate.gd" id="2"]
-
-[node name="{name}Shard{number}" instance=ExtResource("1")]
-script = ExtResource("2")
