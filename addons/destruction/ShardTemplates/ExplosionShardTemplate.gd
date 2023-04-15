@@ -1,5 +1,10 @@
 extends RigidBody3D
 
+var explosion_power = 10
+
 func _ready():
-	#apply_impulse(Vector3(randf_range(0, 1), .1, randf_range(0, 1)) - Vector3.ONE * .5, -position.normalized() / 10 + Vector3.UP * 6)
-	apply_impulse(Vector3(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1)), -position.normalized() * 50)
+	await(get_tree().physics_frame) #Both of these are required to skip the first loop due to bug https://github.com/godotengine/godot/issues/75934
+	await(get_tree().physics_frame)
+	apply_impulse(Vector3(randf(), randf(), randf()), -position.normalized() * explosion_power)
+	
+	

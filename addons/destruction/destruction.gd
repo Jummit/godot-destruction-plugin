@@ -11,15 +11,21 @@ extends Node
 @export var shard_template : PackedScene = preload("res://addons/destruction/ShardTemplates/DefaultShardTemplate.tscn")
 @export var shard_scene : PackedScene
 @export var shard_container : NodePath = "../../": set = set_shard_container
+@export var collision_layers : Array[int]
+@export var layer_masks : Array[int]
+@export var explosion_power := 10
+@export var fade_delay := 4
+@export var shrink_delay := 4
 
 const DestructionUtils = preload("res://addons/destruction/DestructionUtils.gd")
 
 var shards : Node3D
 
 func destroy() -> void:
-	shards = DestructionUtils.create_shards(shard_scene.instantiate(), shard_template)
+	shards = DestructionUtils.create_shards(shard_scene.instantiate(), shard_template, collision_layers, layer_masks, explosion_power, fade_delay, shrink_delay)
 	get_node(shard_container).add_child(shards)
 	shards.global_transform.origin = get_parent().global_transform.origin
+	shards.top_level = true
 	get_parent().queue_free()
 
 func set_shard_container(to : NodePath) -> void:
@@ -40,6 +46,6 @@ func _get_configuration_warning() -> String:
 static func _has_parent_of_type(node : Node, type) -> bool:
 	if not node.get_parent():
 		return false
-	if node.get_parent() is type:
+	if typeof(node.get_parent()) == type:
 		return true
 	return _has_parent_of_type(node.get_parent(), type)

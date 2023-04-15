@@ -4,7 +4,7 @@
 
 1. Install the **Cell Fracture** addon in Blender, **join your mesh** and use **F3** to search for Cell Fracture. Set the Source Limit to how many RigidBodies you want in your game. (\~5 – 20)
 2. Export it as .obj, import it in Godot **as a scene** and create an **instance** of this scene.
-3. Install and **enable** the **Destruction plugin** from the asset library.
+3. For Godot **3** Install and **enable** the **Destruction plugin** from the asset library. On Godot **4** and above, currently the best method is to download this repository; and extract the **addons/** folder into the root of your project. It can then be enabled under plugin settings as usual.
 4. Add a **Destruction node** to the **intact** scene and set the Shard Sceneto the **fragmented** scene.
 5. Set the Shard Template to a template from the res://addons/destruction/ShardTemplates/ folder or leave it as default.
 6. Set the Shard Containerpath to the node the fragmented objects will be added to at runtime or leave it empty.

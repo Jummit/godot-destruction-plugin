@@ -1,4 +1,5 @@
-static func create_shards(object : Node3D, shard_template : PackedScene = preload("res://addons/destruction/ShardTemplates/DefaultShardTemplate.tscn")) -> Node3D:
+static func create_shards(object : Node3D, shard_template : PackedScene = preload("res://addons/destruction/ShardTemplates/DefaultShardTemplate.tscn"), 
+collision_layers = [1], layer_masks = [1], explosion_power = 10, fade_delay = 4, shrink_delay = 4) -> Node3D:
 	var shards := Node3D.new()
 	shards.name = str(object.name) + "Shards"
 	var shard_num := 0
@@ -12,15 +13,36 @@ static func create_shards(object : Node3D, shard_template : PackedScene = preloa
 		
 		var mesh_instance : MeshInstance3D = new_shard.get_node("MeshInstance")
 		mesh_instance.mesh = shard_mesh.mesh
+		shard_mesh.queue_free()
 		
 		var collision_shape : CollisionShape3D = new_shard.get_node("CollisionShape")
 		collision_shape.shape = mesh_instance.mesh.create_convex_shape()
 		
+        var collision_layers_decimal = 0
+        for collision_layer in collision_layers:
+            collision_layers_decimal += 2**(collision_layer -1)
+        new_shard.collision_layer = collision_layers_decimal
+        
+        var layer_masks_decimal = 0
+        for layer_mask in layer_masks:
+            layer_masks_decimal += 2**(layer_mask -1)
+        new_shard.collision_mask = layer_masks_decimal
+        
+        var variables = {"explosion_power": explosion_power, 
+        "fade_delay": fade_delay,
+        "shrink_delay": shrink_delay
+        }
+        
+        for variable in variables:
+            new_shard.set(variable, variables[variable])
+		
 		shards.add_child(new_shard)
 		shard_num += 1
+	object.queue_free() #Another instance which needs to be queued free or it will end up as an orphan node.
 	return shards
 
 
+#Seems unecessary and quickly breaks the addon after a few uses due to the surface mesh loop doubling in size for each object added (E.g spawning 1 object repeatedly eventually breaks it)
 static func reposition_mesh_to_middle(mesh_instance : MeshInstance3D):
 	var mesh : ArrayMesh = mesh_instance.mesh
 	if mesh.get_faces().size() == 0:
