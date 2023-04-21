@@ -1,4 +1,4 @@
-# Godot Destruction Plugin ![Godot v4.0](https://img.shields.io/badge/Godot-v4.0-%23478cbf) ![GitHub](https://img.shields.io/github/license/Jummit/godot-destruction-plugin)
+# Godot Destruction Plugin ![Godot v4.0](https://img.shields.io/badge/Godot-v4.1-%23478cbf) ![GitHub](https://img.shields.io/github/license/Jummit/godot-destruction-plugin)
 
 Addon for creating a destruction effect for meshes based on a segmented version.
 
