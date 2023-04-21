@@ -7,7 +7,7 @@ var explosion_power : float
 var fade_delay : float
 
 func _ready():
-	if not shrink_delay and not fade_delay:
+	if shrink_delay < 0 and fade_delay < 0:
 		await get_tree().create_timer(2).timeout
 	else:
 		# Both of these are required to skip the first loop due to this bug:
