@@ -16,6 +16,10 @@ run/main_scene="res://demo.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.png"
 
+[autoload]
+
+DestructionUtils="*res://addons/destruction/destruction_utils.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/destruction/plugin.cfg")
