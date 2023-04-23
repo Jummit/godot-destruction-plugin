@@ -21,8 +21,8 @@ extends Node
 ## How many seconds until the shards shrink. Set to -1 to disable shrinking.
 @export var shrink_delay := 2.0
 @export_group("Collision")
-@export_flags_2d_physics var collision_layers = 1
-@export_flags_2d_physics var layer_masks = 1
+@export_flags_3d_physics var collision_layers = 1
+@export_flags_3d_physics var layer_masks = 1
 
 signal _shards_created(shards)
 
