@@ -17,10 +17,14 @@ func create_shards(meshes : PackedScene, shard_scene : PackedScene,
 	
 	var shards := Node3D.new()
 	shards.name = str(cached_meshes[meshes].name) + "Shards"
+	
+	# Used to place the loop back on the main frame and avoid thread errors
+	await get_tree().process_frame
 	for original in original_meshes.get_children():
 		if not original is MeshInstance3D:
 			continue
 		var new_shard : RigidBody3D = shard_scene.instantiate()
+		
 		
 		var mesh_instance : MeshInstance3D = new_shard.get_node("MeshInstance")
 		mesh_instance.mesh = original.mesh
