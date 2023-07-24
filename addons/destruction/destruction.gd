@@ -39,7 +39,7 @@ func destroy(explosion_power := 1.0) -> void:
 
 
 func _create_shards(explosion_power : float):
-	var shards := DestructionUtils.create_shards(fragmented, shard,
+	var shards := await DestructionUtils.create_shards(fragmented, shard,
 			collision_layers, layer_masks, explosion_power, fade_delay,
 			shrink_delay)
 	emit_signal.call_deferred("_shards_created", shards)

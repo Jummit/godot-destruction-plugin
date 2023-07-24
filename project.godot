@@ -20,6 +20,10 @@ config/icon="res://icon.png"
 
 DestructionUtils="*res://addons/destruction/destruction_utils.gd"
 
+[dotnet]
+
+project/assembly_name="Destruction Addon"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/destruction/plugin.cfg")
