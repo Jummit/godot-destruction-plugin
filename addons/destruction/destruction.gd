@@ -10,9 +10,7 @@ extends Node
 ## Handles destruction of the parent node.
 ##
 ## When [method destroy] is called, the parent node is freed and shards
-## are added to the [member shard_container]. The [member shard] scene
-## is used as a template for [RigidBody3D]s created from the meshes
-## inside the [member fragmented] scene.
+## are added to the [member shard_container].
 
 ## A scene of the fragmented mesh containing multiple [MeshInstance3D]s.
 @export var fragmented: PackedScene: set = set_fragmented
