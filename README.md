@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2023 Jummit
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Godot Destruction Plugin ![Godot v4.0](https://img.shields.io/badge/Godot-v4.2-%23478cbf) ![GitHub](https://img.shields.io/github/license/Jummit/godot-destruction-plugin)
 
 Addon for creating a destruction effect for meshes based on a segmented version.
@@ -23,3 +29,7 @@ For Godot **4** and above, download the addon from the [releases](https://github
 Code licensed under the MIT license.
 
 [Marble texture](https://3dtextures.me/2019/01/02/marble-gray-001/) licensed CC0 by [3DTextures](https://3dtextures.me), optimized for file size.
+
+All other files licensed under CC0.
+
+This project is [REUSE compliant](https://reuse.software/).

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2023 Jummit
+#
+# SPDX-License-Identifier: MIT
+
 extends Node3D
 
 @onready var destruction: Destruction = $DestructibleCube/Destruction
