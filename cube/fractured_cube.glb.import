@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://celvn43a7xgcb"
-path="res://.godot/imported/fractured_cube.glb-adb4b49b26963de61d86982b04de9b32.scn"
+path="res://.godot/imported/fractured_cube.glb-cdee53da480d1f1978784d6c82458b19.scn"
 
 [deps]
 
-source_file="res://fractured_cube.glb"
-dest_files=["res://.godot/imported/fractured_cube.glb-adb4b49b26963de61d86982b04de9b32.scn"]
+source_file="res://cube/fractured_cube.glb"
+dest_files=["res://.godot/imported/fractured_cube.glb-cdee53da480d1f1978784d6c82458b19.scn"]
 
 [params]
 

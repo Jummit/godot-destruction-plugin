@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cq3dmgimeff8x"]
 
 [ext_resource type="Script" path="res://demo.gd" id="1_xvv5r"]
-[ext_resource type="PackedScene" uid="uid://cexof5tlc7l1i" path="res://destructible_cube.tscn" id="2_1ot51"]
+[ext_resource type="PackedScene" uid="uid://cexof5tlc7l1i" path="res://cube/destructible_cube.tscn" id="2_1ot51"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_yig7p"]
 size = Vector3(20, 0.5, 20)
