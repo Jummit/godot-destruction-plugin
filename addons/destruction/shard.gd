@@ -2,8 +2,11 @@ extends RigidBody3D
 
 ## Shard created by [Destruction].
 
+## See [member Destruction.shrink_delay].
 var shrink_delay : float
+## See [method Destruction.destroy].
 var explosion_power : float
+## See [member Destruction.fade_delay].
 var fade_delay : float
 
 func _ready():
@@ -30,7 +33,7 @@ func _ready():
 				.set_trans(Tween.TRANS_EXPO)\
 				.set_ease(Tween.EASE_OUT)
 
-		apply_impulse(random_direction() * explosion_power, -position.normalized())
+		apply_impulse(_random_direction() * explosion_power, -position.normalized())
 
 		if shrink_delay > 0:
 			tween.parallel().tween_property($MeshInstance, "scale", Vector3.ZERO, 2)\
@@ -39,5 +42,5 @@ func _ready():
 	queue_free()
 
 
-static func random_direction() -> Vector3:
+static func _random_direction() -> Vector3:
 	return (Vector3(randf(), randf(), randf()) - Vector3.ONE / 2.0).normalized() * 2.0
