@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://b4ygu62iepx6e" path="res://cube/marble.tres" id="1_j03bl"]
 [ext_resource type="Script" path="res://addons/destruction/destruction.gd" id="2_gffgg"]
-[ext_resource type="PackedScene" uid="uid://celvn43a7xgcb" path="res://cube/fractured_cube.glb" id="3_k7mab"]
+[ext_resource type="PackedScene" uid="uid://celvn43a7xgcb" path="res://cube/cube_fragments.glb" id="3_c1ox2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_h5eed"]
 size = Vector3(2, 2, 2)
@@ -19,7 +19,6 @@ mesh = SubResource("BoxMesh_h5eed")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_uo2w7")
 
-[node name="Destruction" type="Node" parent="." node_paths=PackedStringArray("mesh_instance")]
+[node name="Destruction" type="Node" parent="."]
 script = ExtResource("2_gffgg")
-fragmented = ExtResource("3_k7mab")
-mesh_instance = NodePath("../MeshInstance3D")
+fragmented = ExtResource("3_c1ox2")

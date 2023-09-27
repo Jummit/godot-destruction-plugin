@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://celvn43a7xgcb"
-path="res://.godot/imported/fractured_cube.glb-cdee53da480d1f1978784d6c82458b19.scn"
+path="res://.godot/imported/cube_fragments.glb-b90c58c2cf782b8838d36706b8edb863.scn"
 
 [deps]
 
-source_file="res://cube/fractured_cube.glb"
-dest_files=["res://.godot/imported/fractured_cube.glb-cdee53da480d1f1978784d6c82458b19.scn"]
+source_file="res://cube/cube_fragments.glb"
+dest_files=["res://.godot/imported/cube_fragments.glb-b90c58c2cf782b8838d36706b8edb863.scn"]
 
 [params]
 
@@ -31,8 +31,8 @@ import_script/path=""
 _subresources={
 "materials": {
 "Material": {
-"use_external/enabled": false,
-"use_external/path": "res://white.tres"
+"use_external/enabled": true,
+"use_external/path": "res://cube/marble.tres"
 }
 }
 }

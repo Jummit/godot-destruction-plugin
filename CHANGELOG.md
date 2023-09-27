@@ -1,6 +1,8 @@
-# SPDX-FileCopyrightText: 2023 Jummit
-#
-# SPDX-License-Identifier: CC0-1.0
+<!--
+SPDX-FileCopyrightText: 2023 Jummit
+
+SPDX-License-Identifier: CC0-1.0
+-->
 
 # Changelog
 
@@ -8,6 +10,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## 7.0
+
+### Changed
+
+* Material overrides now have priority over the mesh materials.
+* Mention asset library for 4.0 installation.
+
+### Removed
+
+* Removed the shard scene, shards are now generated in the destruction node.
+
+### Added
+
+* Allow non-standard spatial materials for shards.
 
 ## 6.1
 
