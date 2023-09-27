@@ -22,7 +22,8 @@ For Godot **4** and above, download the addon from the [releases](https://github
 2. Select everything, right click and select `Set Origin > Origin to Center of Mass (Volume)`.
 3. Export it as a .ojb or GLTF, import it in Godot **as a scene** and create an **instance** of this scene.
 4. Add a `Destruction` node to the **intact** node and set the `Fragmented` scene to the **fragmented** scene.
-5. Call `destroy()` to destroy the object.
+6. Set the `Mesh Instance` to the original mesh instance.
+7. Call `destroy()` to destroy the object.
 
 ## Performance
 
