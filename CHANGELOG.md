@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Made the cube in the demo a RigidBody3D, which is closer to real-world usage.
 * Only one material is generated for each destroyed object.
+* Names are now forced human readable.
 
 ### Fixed
 
