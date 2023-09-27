@@ -6,5 +6,7 @@
 script = ExtResource("1_c05n7")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
+editor_description = "Configured in the _ready function."
 
 [node name="MeshInstance" type="MeshInstance3D" parent="."]
+editor_description = "Configured in the _ready function."
