@@ -13,6 +13,8 @@ var explosion_power : float
 ## See [member Destruction.fade_delay].
 var fade_delay : float
 
+@onready var mesh_instance: MeshInstance3D = $MeshInstance
+
 func _ready():
 	if shrink_delay < 0 and fade_delay < 0:
 		await get_tree().create_timer(2).timeout
@@ -22,11 +24,11 @@ func _ready():
 		await get_tree().physics_frame
 		await get_tree().physics_frame
 
-		var material : StandardMaterial3D = $MeshInstance.mesh.surface_get_material(0)
+		var material: StandardMaterial3D = mesh_instance.mesh.surface_get_material(0)
 		if not material:
 			return
 		material = material.duplicate()
-		$MeshInstance.material_override = material
+		mesh_instance.material_override = material
 		material.flags_transparent = true
 
 		var tween = create_tween()
@@ -40,7 +42,7 @@ func _ready():
 		apply_impulse(_random_direction() * explosion_power, -position.normalized())
 
 		if shrink_delay > 0:
-			tween.parallel().tween_property($MeshInstance, "scale", Vector3.ZERO, 2)\
+			tween.parallel().tween_property(mesh_instance, "scale", Vector3.ZERO, 2)\
 				.set_delay(shrink_delay)
 		await tween.finished
 	queue_free()

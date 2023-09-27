@@ -8,7 +8,7 @@ SPDX-License-Identifier: CC0-1.0
 
 Addon for creating a destruction effect for meshes based on a segmented version.
 
-https://user-images.githubusercontent.com/28286961/232236134-19868773-dd9f-402a-b21e-c8ecc36beb81.mp4
+https://github.com/Jummit/godot-destruction-plugin/assets/28286961/a84ef9c2-fca0-446e-a5af-322f03dc753e
 
 ## Installation
 
@@ -23,6 +23,10 @@ For Godot **4** and above, download the addon from the [releases](https://github
 3. Export it as a .ojb or GLTF, import it in Godot **as a scene** and create an **instance** of this scene.
 4. Add a `Destruction` node to the **intact** node and set the `Fragmented` scene to the **fragmented** scene.
 5. Call `destroy()` to destroy the object.
+
+## Performance
+
+The plugin is only tested in very small scenes. It currently creates a new material for each shard, resulting in a lot of unecessary draw calls. It also creates the shards on the main thread by default. Set the thread group to separate when that becomes an issue.
 
 ## License
 
