@@ -267,4 +267,4 @@ mesh = SubResource("BoxMesh_h5eed")
 [node name="Destruction" type="Node" parent="." node_paths=PackedStringArray("shard_container")]
 script = ExtResource("2_gffgg")
 fragmented = SubResource("PackedScene_ioh5n")
-shard_container = NodePath("")
+shard_container = NodePath("../..")
