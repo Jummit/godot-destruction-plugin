@@ -24,8 +24,6 @@ tonemap_mode = 2
 [node name="Demo" type="Node3D"]
 script = ExtResource("1_xvv5r")
 
-[node name="Shards" type="Node3D" parent="."]
-
 [node name="DestructibleCube" parent="." instance=ExtResource("2_1ot51")]
 editor_description = "The cube is replaced with a new instance once destroyed."
 
@@ -62,5 +60,3 @@ grow_vertical = 0
 text = "Destroy"
 
 [connection signal="pressed" from="DestroyButton" to="." method="_on_destroy_button_pressed"]
-
-[editable path="DestructibleCube"]
