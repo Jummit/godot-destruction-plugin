@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2023 Jummit
+#
+# SPDX-License-Identifier: MIT
+
 extends RigidBody3D
 
 ## Shard created by [Destruction].
