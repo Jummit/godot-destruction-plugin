@@ -15,6 +15,6 @@ mesh = SubResource("BoxMesh_h5eed")
 [node name="Destruction" type="Node" parent="." node_paths=PackedStringArray("shard_container")]
 script = ExtResource("1_rrtfw")
 fragmented = ExtResource("2_is15p")
-shard_container = NodePath("")
-fade_delay = 4
-shrink_delay = 4
+shard_container = NodePath("../..")
+fade_delay = 4.0
+shrink_delay = 4.0
