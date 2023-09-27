@@ -9,6 +9,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 6.1
+
+### Breaking
+
+* Added `mesh_instance` property which is used to provide the mesh with the shard material.
+
+### Changed
+
+* Made the cube in the demo a RigidBody3D, which is closer to real-world usage.
+* Only one material is generated for each destroyed object.
+
+### Fixed
+
+* Removed embedded scene in `destructible_cube.tscn`
+
+### Added
+
+* Added more documentation.
+* Added "addon" tag to project.
+
 ## 6.0
 
 ### Breaking

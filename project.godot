@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Destruction Addon"
 config/description="Addon for creating a destruction effect for meshes based on a segmented version."
+config/tags=PackedStringArray("addon")
 run/main_scene="res://demo.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.png"

@@ -26,6 +26,7 @@ script = ExtResource("1_xvv5r")
 
 [node name="DestructibleCube" parent="." instance=ExtResource("2_1ot51")]
 editor_description = "The cube is replaced with a new instance once destroyed."
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.490263, 0)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.759737, 0)
