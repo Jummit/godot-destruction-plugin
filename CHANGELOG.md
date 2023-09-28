@@ -11,6 +11,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 7.1
+
+### Changed
+
+* The demo now features multiple cubes, which can be destroyed by clicking on them.
+* The background now is a more neutral color.
+
+### Added
+
+* Reuse modified shard materials if they are the same.
+
 ## 7.0
 
 ### Changed

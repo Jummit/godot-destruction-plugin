@@ -26,7 +26,7 @@ For Godot **4** and above, download the addon from the [releases](https://github
 
 ## Performance
 
-The plugin is only tested in very small scenes. It currently creates a new material for each shard, resulting in a lot of unecessary draw calls. It also creates the shards on the main thread by default. Set the thread group to separate when that becomes an issue.
+The plugin is only tested in very small scenes.
 
 ## License
 

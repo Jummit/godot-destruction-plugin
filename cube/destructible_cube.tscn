@@ -19,6 +19,7 @@ mesh = SubResource("BoxMesh_h5eed")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_uo2w7")
 
-[node name="Destruction" type="Node" parent="."]
+[node name="Destruction" type="Node" parent="." node_paths=PackedStringArray("shard_container")]
 script = ExtResource("2_gffgg")
 fragmented = ExtResource("3_c1ox2")
+shard_container = NodePath("")
