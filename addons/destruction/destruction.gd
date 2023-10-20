@@ -78,6 +78,8 @@ func _add_shard(original: MeshInstance3D, explosion_power: float) -> void:
 	body.global_rotation = get_parent().global_rotation
 	body.collision_layer = collision_layer
 	body.collision_mask = collision_mask
+	mesh.scale = original.scale
+	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
 	mesh.mesh = original.mesh
 	if fade_delay >= 0:
