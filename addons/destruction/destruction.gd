@@ -75,6 +75,7 @@ func _add_shard(original: MeshInstance3D, explosion_power: float) -> void:
 	body.add_child(shape)
 	shard_container.add_child(body, true)
 	body.global_position = get_parent().global_transform.origin + original.position
+	body.global_rotation = get_parent().global_rotation
 	body.collision_layer = collision_layer
 	body.collision_mask = collision_mask
 	shape.shape = _cached_shapes[original]
