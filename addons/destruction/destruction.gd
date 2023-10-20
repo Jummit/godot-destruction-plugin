@@ -32,7 +32,7 @@ extends Node
 @export_flags_3d_physics var collision_mask = 1
 
 ## Cached shard meshes (instantiated from [member fragmented]).
-static var _cached_meshes := {}
+static var _cached_scenes := {}
 ## Cached collision shapes.
 static var _cached_shapes := {}
 
@@ -47,11 +47,11 @@ func destroy(explosion_power := 1.0) -> void:
 
 ## Returns the list of shard meshes in the [member fragmented] scene.
 func _get_shards() -> Array[Node]:
-	if not fragmented in _cached_meshes:
-		_cached_meshes[fragmented] = fragmented.instantiate()
-		for shard_mesh in _cached_meshes[fragmented].get_children():
+	if not fragmented in _cached_scenes:
+		_cached_scenes[fragmented] = fragmented.instantiate()
+		for shard_mesh in _cached_scenes[fragmented].get_children():
 			_cached_shapes[shard_mesh] = shard_mesh.mesh.create_convex_shape()
-	return (_cached_meshes[fragmented].get_children() as Array)\
+	return (_cached_scenes[fragmented].get_children() as Array)\
 			.filter(func(node): return node is MeshInstance3D)
 
 
