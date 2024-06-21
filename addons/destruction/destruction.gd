@@ -101,12 +101,12 @@ func _add_shard(original: MeshInstance3D, explosion_power: float) -> void:
 			-original.position.normalized())
 	if shrink_delay < 0 and fade_delay < 0:
 		get_tree().create_timer(animation_length)\
-				.timeout.connect(func(): body.queue_free())
+				.timeout.connect(func():if is_instance_valid(body): body.queue_free())
 	elif shrink_delay >= 0:
 		var tween := get_tree().create_tween()
 		tween.tween_property(mesh, "scale", Vector3.ZERO, animation_length)\
 				.set_delay(shrink_delay)
-		tween.finished.connect(func(): body.queue_free())
+		tween.finished.connect(func(): if is_instance_valid(body):body.queue_free())
 
 
 static func _random_direction() -> Vector3:
