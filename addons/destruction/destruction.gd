@@ -106,7 +106,7 @@ func _add_shard(original: MeshInstance3D, explosion_power: float) -> void:
 		var tween := get_tree().create_tween()
 		tween.tween_property(mesh, "scale", Vector3.ZERO, animation_length)\
 				.set_delay(shrink_delay)
-		tween.finished.connect(func(): if is_instance_valid(body):body.queue_free())
+		tween.finished.connect(func(): if is_instance_valid(body): body.queue_free())
 
 
 static func _random_direction() -> Vector3:
