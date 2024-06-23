@@ -82,14 +82,16 @@ func _add_shard(original: MeshInstance3D, explosion_power: float) -> void:
 	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
 	mesh.mesh = original.mesh
+	var tween := get_tree().create_tween()
+	tween.set_parallel(true)
 	if fade_delay >= 0:
 		var material = original.mesh.surface_get_material(0)
 		if material is StandardMaterial3D:
 			if not material in _modified_materials:
 				var modified = material.duplicate()
 				modified.flags_transparent = true
-				get_tree().create_tween().tween_property(modified,
-						"albedo_color", Color(1, 1, 1, 0), animation_length)\
+				tween.tween_property(modified,
+						"albedo_color", Color(1, 1, 1, 0), animation_length - fade_delay)\
 					.set_delay(fade_delay)\
 					.set_trans(Tween.TRANS_EXPO)\
 					.set_ease(Tween.EASE_OUT)
@@ -99,14 +101,10 @@ func _add_shard(original: MeshInstance3D, explosion_power: float) -> void:
 			push_warning("Shard doesn't use a StandardMaterial3D, can't add transparency. Set fade_delay to -1 to remove this warning.")
 	body.apply_impulse(_random_direction() * explosion_power,
 			-original.position.normalized())
-	if shrink_delay < 0 and fade_delay < 0:
-		get_tree().create_timer(animation_length)\
-				.timeout.connect(func(): body.queue_free())
-	elif shrink_delay >= 0:
-		var tween := get_tree().create_tween()
+	if shrink_delay >= 0:
 		tween.tween_property(mesh, "scale", Vector3.ZERO, animation_length)\
 				.set_delay(shrink_delay)
-		tween.finished.connect(func(): body.queue_free())
+	tween.tween_callback(body.queue_free).set_delay(animation_length)
 
 
 static func _random_direction() -> Vector3:
